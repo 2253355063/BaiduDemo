@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.yunkakeji.baidudemo"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        // 设置支持multidex
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding{
+        enabled =true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+
+    //常用工具集依赖库
+    implementation 'com.blankj:utilcodex:1.25.9'
+
+    //功能强大，UI简洁，交互优雅的通用弹窗 androidx
+    implementation 'com.lxj:xpopup:1.8.10-x'
+
+    //基于腾讯x5开源库YCWebView
+    implementation 'cn.yc:WebViewLib:1.1.6'
+
+    //详细的省市区地址信息，支持仿iOS滚轮实现，仿京东样式，一级或者三级列表
+    implementation 'liji.library.dev:citypickerview:5.0.0'
+
+    //城市选择、定位、搜索及右侧字母导航CityPicker
+    implementation 'com.zaaach:citypicker:2.0.3'
+
+    //漂亮且功能强大的TagLayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:3.0.0'
+
+    //强大的适配器库
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50'
+
+    //动态权限
+    implementation 'com.yanzhenjie:permission:2.0.3'
+
+    //recyclerview 分割线
+    implementation 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+
+    //*************网络配置*************************************
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //网络库及其支持库
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    //*************网络配置*************************************
+
+    //Android数据总线库
+    implementation 'org.simple:androideventbus:1.0.5.1'
+
+    //漂亮强大的刷新和加载库
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0'  //没有使用特殊Header，可以不加这行
+
+    //加载，空数据，网络状态切换
+    implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
+
+    //图片选择
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
+    //二维码扫描
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.7'
+    //电子签名
+    implementation 'com.kyanogen.signatureview:signature-view:1.2'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+}
