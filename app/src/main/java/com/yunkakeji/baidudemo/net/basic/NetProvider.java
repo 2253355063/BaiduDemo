@@ -17,8 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetProvider {
 
-    private static final String BASE_URL_OUTER = "https://api2.bmob.cn/";//正式地址
-    private static String URL;
+//    public static  String BASE_URL_Bmob = "https://api2.bmob.cn/";//bmob地址
+    public static  String BASE_URL_BaiDu = "https://aip.baidubce.com/";//百度地址
     private static final HttpLoggingInterceptor sLogging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
         @Override
         public void log(String message) {
@@ -27,16 +27,13 @@ public class NetProvider {
         }
     }).setLevel(HttpLoggingInterceptor.Level.BODY);
 
+    private static final BaseUrlInterceptor baseUrlInterceptor=new BaseUrlInterceptor();
     public static Retrofit INSTANCE() {
-
-        if(URL == null) {
-            URL = BASE_URL_OUTER;
-        }
 
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .baseUrl(URL)
+                .baseUrl(BASE_URL_BaiDu)
                 .client(new OkHttpClient.Builder()
                         .connectTimeout(NetTimeOutUtil.DEFAULT_CONNECT_TIMEOUT, TimeUnit.SECONDS)
                         .readTimeout(NetTimeOutUtil.DEFAULT_DATA_TIMEOUT, TimeUnit.SECONDS)
@@ -64,6 +61,7 @@ public class NetProvider {
                             }
                         })
                         .addInterceptor(sLogging)
+//                        .addInterceptor(baseUrlInterceptor)
                         .addInterceptor(new TokenTimeoutInterceptor())
                         .build())
                 .build();

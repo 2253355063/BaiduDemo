@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="BaiDuType">
+        <item>文字识别</item>
+    </string-array>
+
+    <string-array name="TextRec">
+        <item>身份证识别</item>
+        <item>银行卡识别</item>
+        <item>通用文字识别</item>
+        <item>通用文字识别</item>
+        <item>网络图片文字识别</item>
+        <item>行驶证识别</item>
+        <item>驾驶证识别</item>
+        <item>营业执照识别</item>
+        <item>车牌号识别</item>
+        <item>表格文字识别</item>
+        <item>通用票据识别</item>
+        <item>手写文字识别</item>
+        <item>增值税发票识别</item>
+        <item>数字识别</item>
+        <item>火车票识别</item>
+        <item>出租车票识别</item>
+        <item>VIN码识别</item>
+        <item>护照识别</item>
+        <item>定额发票识别</item>
+        <item>车辆合格证识别</item>
+        <item>户口本识别</item>
+        <item>iOCR财会版</item>
+        <item>出生证明识别</item>
+        <item>港澳通行证识别</item>
+        <item>台湾通行证识别</item>
+        <item>二维码识别</item>
+        <item>名片识别</item>
+        <item>名片识别</item>
+        <item>保险单识别</item>
+    </string-array>
+</resources>

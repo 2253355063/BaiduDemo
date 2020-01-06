@@ -510,3 +510,8 @@
 -keep interface android.support.design.** { *; }
 -keep public class android.support.design.R$* { *; }
 #----------------------文件选择库混淆-------------------------------------
+
+#----------------------百度产品-------------------------------------
+-keep class com.baidu.ocr.sdk.**{*;}
+-dontwarn com.baidu.ocr.**
+#----------------------百度产品-------------------------------------
