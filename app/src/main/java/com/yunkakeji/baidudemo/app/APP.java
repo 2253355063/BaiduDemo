@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.baidu.mapapi.CoordType;
+import com.baidu.mapapi.SDKInitializer;
 import com.blankj.utilcode.util.SPUtils;
 import com.google.gson.Gson;
 import com.lljjcoder.style.citylist.utils.CityListLoader;
@@ -75,6 +77,12 @@ public class APP extends Application {
          * 预先加载三级列表显示省市区的数据
          */
         CityListLoader.getInstance().loadProData(this);
+
+        //在使用SDK各组件之前初始化context信息，传入ApplicationContext
+        SDKInitializer.initialize(this);
+        //自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
+        //包括BD09LL和GCJ02两种坐标，默认是BD09LL坐标。
+        SDKInitializer.setCoordType(CoordType.BD09LL);
     }
 
     public static User getInstance() {

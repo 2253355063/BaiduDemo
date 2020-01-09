@@ -2,6 +2,8 @@
 <resources>
     <string-array name="BaiDuType">
         <item>文字识别</item>
+        <item>百度地图</item>
+        <item>百度定位</item>
     </string-array>
 
     <string-array name="TextRec">

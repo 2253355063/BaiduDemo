@@ -68,14 +68,14 @@ public class TextRecognitionActivity extends BaseActivity {
 
         String[] textOrcs = getResources().getStringArray(R.array.TextRec);
         for (String temp : textOrcs) {
-            adapter.getData().add(new HomeData(temp, ORCCommonActivity.class));
+            adapter.getData().add(new HomeData(temp, IDCardActivity.class));
         }
-        adapter.notifyDataSetChanged();
 
         for (int i=0;i<activityClass.length;i++){
             adapter.getData().get(i).setActivity(activityClass[i]);
         }
 
+        adapter.notifyDataSetChanged();
         orcViewModel.getAccessToken().observe(this, new Observer<ResponseBody>() {
             @Override
             public void onChanged(ResponseBody responseBody) {

@@ -514,4 +514,8 @@
 #----------------------百度产品-------------------------------------
 -keep class com.baidu.ocr.sdk.**{*;}
 -dontwarn com.baidu.ocr.**
+
+-keep class com.baidu.** {*;}
+-keep class mapsdkvi.com.** {*;}
+-dontwarn com.baidu.**
 #----------------------百度产品-------------------------------------

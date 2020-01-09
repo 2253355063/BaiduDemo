@@ -118,13 +118,13 @@ public class ORCViewModel extends ViewModel {
                     @Override
                     public void accept(ResponseBody responseBody) throws Exception {
 
-                        mIdCardInfo.postValue(responseBody);
+                        mTextImageURL.postValue(responseBody);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
 
-                        mIdCardInfo.postValue(null);
+                        mTextImageURL.postValue(null);
                     }
                 });
 

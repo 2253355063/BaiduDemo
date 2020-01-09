@@ -1,5 +1,8 @@
 package com.yunkakeji.baidudemo.modules.ocr;
 
+import android.text.TextUtils;
+import android.view.View;
+
 import com.blankj.utilcode.util.ToastUtils;
 import com.yunkakeji.baidudemo.R;
 import com.yunkakeji.baidudemo.base.activity.BaseActivity;
@@ -39,6 +42,24 @@ public class ORCCommonActivity extends BaseActivity {
 
         accessToken=getIntent().getStringExtra("Token");
 
+        mBD.btnRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (accessToken==null){
+                    ToastUtils.showShort("token不能为空");
+                    return;
+                }
+                textImageURL=mBD.edtImageUrl.getText().toString();
+                if (TextUtils.isEmpty(textImageURL)){
+                    ToastUtils.showShort("请求输入文字图片URL");
+                    return;
+                }
+                textImageURL=mBD.edtImageUrl.getText().toString();
+                getTextInfo();
+            }
+        });
+
+        mBD.edtImageUrl.setText(textImageURL);
     }
 
     @Override
