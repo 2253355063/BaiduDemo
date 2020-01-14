@@ -76,6 +76,7 @@ public class MainActivity extends BaseActivity {
 
         String[] baiDuTypes = getResources().getStringArray(R.array.BaiDuType);
 
+        activityClass.add(ColorsActivity.class);
         activityClass.add(TextRecognitionActivity.class);
         activityClass.add(BDMapActivity.class);
         activityClass.add(LocationActivity.class);

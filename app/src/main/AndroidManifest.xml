@@ -67,6 +67,7 @@
             android:name=".modules.map.LocationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".modules.ColorsActivity" />
 
     </application>
 

@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BaiduMapOptions;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.UiSettings;
 import com.yunkakeji.baidudemo.R;
 import com.yunkakeji.baidudemo.base.activity.BaseActivity;
 import com.yunkakeji.baidudemo.databinding.ActivityBaiduMapBinding;
@@ -70,6 +71,11 @@ public class BDMapActivity extends BaseActivity {
                 mBD.bmapView.refreshDrawableState();
             }
         });
+
+        //实例化UiSettings类对象
+        UiSettings uiSettings = baiduMap.getUiSettings();
+        //通过设置enable为true或false 选择是否显示指南针
+        uiSettings.setCompassEnabled(true);
     }
 
     @Override
